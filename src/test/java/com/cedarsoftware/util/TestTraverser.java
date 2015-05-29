@@ -1,6 +1,7 @@
 package com.cedarsoftware.util;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,8 +11,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.TimeZone;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
 /**
  * @author John DeRegnaucourt (john@cedarsoftware.com)
@@ -82,6 +82,7 @@ public class TestTraverser
         beta.friends.put("Tom", "Tom Jones");
         beta.friends.put(alpha, "Alpha beta");
         beta.friends.put("beta", beta);
+		beta.friends.put("null", null);
 
         charlie.salary = 150000.01;
         charlie.alpha = alpha;

@@ -124,7 +124,7 @@ public class Traverser
                 }
                 else if (current instanceof Map)
                 {
-                    walkMap(stack, (Map) current);
+					walkMap(stack, (Map) current, skip);
                 }
                 else
                 {
@@ -164,18 +164,28 @@ public class Traverser
         }
     }
 
-    private static void walkMap(Deque stack, Map map)
+	private void walkMap(Deque stack, Map map, Class[] skip)
     {
-        for (Map.Entry entry : (Iterable<Map.Entry>) map.entrySet())
+		try {
+    	Iterable<Map.Entry> iterable = (Iterable<Map.Entry>) map.entrySet();
+    	if (iterable != null) {
+        for (Map.Entry entry : iterable)
         {
             Object o = entry.getKey();
 
             if (o != null && !o.getClass().isPrimitive())
             {
                 stack.add(entry.getKey());
-                stack.add(entry.getValue());
+				// Value can be null, hashmap supports null value for a key
+				if (entry.getValue() != null) {
+					stack.add(entry.getValue());
+				}
             }
         }
+    	}
+		} catch (UnsupportedOperationException e) {
+			walkFields(stack, map, skip);
+		}
     }
 
     private ClassInfo getClassInfo(Class current, Class[] skip)
