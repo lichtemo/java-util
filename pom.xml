@@ -8,6 +8,12 @@
     <version>1.19.4-SNAPSHOT</version>
     <description>Java Utilities</description>
     <url>https://github.com/jdereg/java-util</url>
+    
+    <parent>
+    	<groupId>build.pluto</groupId>
+    	<artifactId>maven-config-common</artifactId>
+    	<version>1.0.1-SNAPSHOT</version>
+    </parent>
 
     <licenses>
         <license>
@@ -200,4 +206,5 @@
         </dependency>
 
     </dependencies>
+    
 </project>

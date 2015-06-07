@@ -1,0 +1,8 @@
+sudo: false
+script: mvn deploy -U -DskipTests=true -Dgpg.skip=true
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+
+jdk: oraclejdk8
