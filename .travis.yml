@@ -1,5 +1,5 @@
 sudo: false
-script: mvn deploy -U -DskipTests=true -Dgpg.skip=true
+script: mvn deploy -U -DskipTests=true
 
 cache:
   directories:
