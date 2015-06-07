@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <name>java-util</name>
     <groupId>com.cedarsoftware</groupId>
-    <artifactId>java-util</artifactId>
+    <artifactId>java-util-pluto-bugfix</artifactId>
     <packaging>jar</packaging>
     <version>1.19.4-SNAPSHOT</version>
     <description>Java Utilities</description>
