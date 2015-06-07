@@ -45,6 +45,8 @@
         <version.plugin.gpg>1.5</version.plugin.gpg>
         <version.plugin.release>2.5.1</version.plugin.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven-deploy-github-owner>pluto-build</maven-deploy-github-owner>
+		<maven-deploy-github-skip>false</maven-deploy-github-skip>
     </properties>
 
     <pluginRepositories>
