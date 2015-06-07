@@ -62,7 +62,7 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <distributionManagement>
+    <!-- <distributionManagement>
         <repository>
             <id>sonatype-nexus-staging</id>
             <name>Nexus Staging Repository</name>
@@ -72,7 +72,14 @@
             <id>snapshot-repo</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement> -->
+    <distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Temporary Staging Repository</name>
+			<url>file://${project.build.directory}/mvnrepository</url>
+		</repository>
+	</distributionManagement>
 
     <build>
         <plugins>
