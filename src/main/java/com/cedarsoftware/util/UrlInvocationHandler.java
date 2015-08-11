@@ -1,7 +1,5 @@
 package com.cedarsoftware.util;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
@@ -58,7 +56,8 @@ import java.net.HttpURLConnection;
 public class UrlInvocationHandler implements InvocationHandler
 {
     public static int SLEEP_TIME = 5000;
-    private final Logger LOG = LogManager.getLogger(UrlInvocationHandler.class);
+	// private final Logger LOG =
+	// LogManager.getLogger(UrlInvocationHandler.class);
     private final UrlInvocationHandlerStrategy _strategy;
 
     public UrlInvocationHandler(UrlInvocationHandlerStrategy strategy)
@@ -100,7 +99,8 @@ public class UrlInvocationHandler implements InvocationHandler
             }
             catch (Throwable e)
             {
-                LOG.error("Error occurred getting HTTP response from server", e);
+				// LOG.error("Error occurred getting HTTP response from server",
+				// e);
                 UrlUtilities.readErrorResponse(c);
                 if (retry-- > 0)
                 {
@@ -117,7 +117,7 @@ public class UrlInvocationHandler implements InvocationHandler
         {
             checkForThrowable(result);
         } catch (Throwable t) {
-            LOG.error("Error occurred on server", t);
+			// LOG.error("Error occurred on server", t);
             return null;
         }
         return result;

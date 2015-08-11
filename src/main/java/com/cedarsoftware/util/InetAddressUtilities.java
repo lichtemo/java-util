@@ -1,7 +1,5 @@
 package com.cedarsoftware.util;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -27,7 +25,8 @@ import java.net.UnknownHostException;
  */
 public class InetAddressUtilities
 {
-    private static final Logger LOG = LogManager.getLogger(InetAddressUtilities.class);
+	// private static final Logger LOG =
+	// LogManager.getLogger(InetAddressUtilities.class);
 
     private InetAddressUtilities() {
         super();
@@ -44,7 +43,7 @@ public class InetAddressUtilities
         }
         catch (Exception e)
         {
-            LOG.warn("Failed to obtain computer's IP address", e);
+			// LOG.warn("Failed to obtain computer's IP address", e);
             return new byte[] {0,0,0,0};
         }
     }
@@ -57,7 +56,7 @@ public class InetAddressUtilities
         }
         catch (Exception e)
         {
-            LOG.warn("Unable to fetch 'hostname'", e);
+			// LOG.warn("Unable to fetch 'hostname'", e);
             return "localhost";
         }
     }
